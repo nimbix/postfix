@@ -1,0 +1,13 @@
+#!/bin/bash
+
+ALPINE_VERSION=3.11
+POSTFIX_VERSION=3.4.9-r0
+[ -n "$1" ] && ALPINE_VERSION="$1"
+[ -n "$2" ] && POSTFIX_VERSION="$2"
+
+docker manifest create \
+    docker.io/nimbix/postfix:${ALPINE_VERSION}_${POSTFIX_VERSION} \
+    docker.io/nimbix/postfix:${ALPINE_VERSION}_${POSTFIX_VERSION}-amd64 \
+    docker.io/nimbix/postfix:${ALPINE_VERSION}_${POSTFIX_VERSION}-ppc64le
+docker manifest push docker.io/nimbix/postfix:${ALPINE_VERSION}_${POSTFIX_VERSION}
+
