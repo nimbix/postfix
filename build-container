@@ -13,5 +13,5 @@ docker build --rm \
     --build-arg POSTFIX_VERSION=$POSTFIX_VERSION \
     -t docker.io/nimbix/postfix:${ALPINE_VERSION}_${POSTFIX_VERSION}-$ARCH .
 
-docker push docker.io/nimbix/postfix:$ALPINE_VERSION_$POSTFIX_VERSION-$ARCH
+docker push docker.io/nimbix/postfix:${ALPINE_VERSION}_${POSTFIX_VERSION-$ARCH}
 
