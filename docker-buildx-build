@@ -5,8 +5,8 @@ POSTFIX_VERSION=3.4.12-r0
 [ -n "$1" ] && ALPINE_VERSION="$1"
 [ -n "$2" ] && POSTFIX_VERSION="$2"
 
-REGISTRY=gcr.io
-REPOSITORY=jarvice
+REGISTRY=us-docker.pkg.dev
+REPOSITORY=jarvice/images
 PLATFORMS="linux/amd64,linux/ppc64le,linux/arm64"
 
 BUILDER=multiarch
